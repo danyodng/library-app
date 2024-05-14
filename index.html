@@ -10,6 +10,28 @@
 <body>
     <header>
         <h1>Library</h1>
+        <dialog>
+            <button autofocus>Close</button>
+            <form>
+                <label for="author">Author: </label>
+                <input type="text" placeholder="Author" id="author" name="author">
+
+                <label for="title">Title: </label>
+                <input type="text" placeholder="Title" id="title" name="title">
+
+                <label for="pages">Number of Pages: </label>
+                <input type="number" placeholder="Number of Pages" min=0 id="pages" name="pages">
+
+                <label for="rating">Rating: </label>
+                <input type="number" placeholder="2" max=5 min=1 id="rating" name="rating">
+
+                <label for="read">Read? </label>
+                <input type="checkbox" id="read" name="read">
+                <button type="submit" id="submit" onclick="addBookForm()">Submit</button>
+
+
+            </form>
+        </dialog>
         <button id="add-book" class="addbook" onclick="addBookForm()">+</button>
     </header>
 

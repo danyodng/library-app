@@ -70,6 +70,7 @@ function displayLibrary(libArray){
     bookDiv.appendChild(bookPages);
     bookDiv.appendChild(bookRating);
     bookDiv.appendChild(bookRead);
+    
     bookDiv.appendChild(readLabel);
 
     libContainer.appendChild(bookDiv);
@@ -91,6 +92,18 @@ addBookToLibrary(book3);
 console.log(myLibrary[0], myLibrary.length);
 
 displayLibrary(myLibrary);
+
+const dialog = document.querySelector("dialog");
+const addBtn = document.querySelector("dialog + button");
+const closeBtn = document.querySelector("dialog button");
+
+addBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeBtn.addEventListener("click", () => {
+  dialog.close();
+});
 
 // addBookForm() {
 // }
