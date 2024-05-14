@@ -39,3 +39,8 @@ form {
     flex-direction: column;
     align-items: center;
 }
+
+
+.confirmCancelBtns{
+    margin-top: 10px;
+}
