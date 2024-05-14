@@ -1,10 +1,11 @@
 .book {
     width: 200px;
     height: 200px;
-    background-color: aqua;
+    background-color: rgba(228, 228, 230, 0.801);
     text-align:center;
     margin: 10px 10px;
     border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(151, 148, 148);
 }
 
 #libContainer {
@@ -19,10 +20,15 @@ header {
 
 }
 .addbook {
-    border: 1px solid blue;
-    background-color: white;
+    display:flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: rgb(156, 220, 157);
+    height: 30px;
     margin:0;
     padding:10px;
     border-radius: 5px;
+
 }
 
