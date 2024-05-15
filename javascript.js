@@ -64,7 +64,16 @@ function displayLibrary(libArray){
     }
     let readLabel = document.createElement('label');
     readLabel.textContent ="Read?";
-  
+    
+    const removeBookDiv = document.createElement("div");
+    removeBookDiv.classList.add("removeBookDiv");
+
+    const removeBook = document.createElement("button");
+    removeBook.classList.add("remove-book");
+    removeBook.textContent="Remove";
+
+    removeBookDiv.appendChild(removeBook);
+
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookPages);
@@ -73,7 +82,15 @@ function displayLibrary(libArray){
     
     bookDiv.appendChild(readLabel);
 
+    bookDiv.appendChild(removeBookDiv);
+
     libContainer.appendChild(bookDiv);
+
+
+    removeBook.addEventListener("click", () => {
+      myLibrary.splice(myLibrary.indexOf(book),1);
+      displayLibrary(myLibrary);
+    });
   });
 
 }
@@ -89,7 +106,7 @@ const book3 = new Book("title3","author3",321,3,true);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
-console.log(myLibrary[0], myLibrary.length);
+
 
 displayLibrary(myLibrary);
 
@@ -105,5 +122,25 @@ closeBtn.addEventListener("click", () => {
   dialog.close();
 });
 
-// addBookForm() {
-// }
+const newBookForm = document.getElementById("newBookForm");
+
+const newTitle = document.getElementById("formtitle");
+const newAuthor = document.getElementById("formauthor");
+const newPages = document.getElementById("formpages");
+const newRating = document.getElementById("formrating");
+const newRead = document.querySelector('input[type=checkbox]');
+
+newBookForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const titleInput = newTitle.value;
+  const authorInput = newAuthor.value;
+  const pagesInput = newPages.value;
+  const RatingInput = newRating.value;
+  const readInput = newRead.checked;
+// create a new book and add to library
+  const newBook = new Book(titleInput,authorInput,pagesInput,RatingInput,readInput);
+  addBookToLibrary(newBook);
+// show the updated library
+  displayLibrary(myLibrary)
+});

@@ -11,26 +11,27 @@
     <header>
         <h1>Library</h1>
         <dialog>
-            <form>
+            <form action="" id="newBookForm">
                 <label for="author">Author: </label>
-                <input type="text" placeholder="Author" id="author" name="author"><br>
+                <input type="text" placeholder="Author" id="formauthor" name="author"><br>
 
                 <label for="title">Title: </label>
-                <input type="text" placeholder="Title" id="title" name="title"><br>
+                <input type="text" placeholder="Title" id="formtitle" name="title"><br>
 
                 <label for="pages">Number of Pages: </label>
-                <input type="number" placeholder="Pages" min=1 id="pages" name="pages"><br>
+                <input type="number" placeholder="Pages" min=1 id="formpages" name="pages"><br>
                 
                 <div class="ratingRead">
                     <label for="rating">Rating: </label>
-                    <input type="number" placeholder="2" max=5 min=1 id="rating" name="rating">
+                    <input type="number" placeholder="2" max=5 min=1 id="formrating" name="rating">
 
-                    <label for="read">Read? </label>
-                    <input type="checkbox" id="read" name="read">
+                    <label for="read">Read?</label>
+                    <input type="checkbox" id="formread" name="read">
+        
                 </div>
 
                 <div class="confirmCancelBtns">
-                    <button value="default" id="confirm" onclick="addBookForm()">Confirm</button>
+                    <button id="confirm" value="default" formmethod="dialog">Confirm</button>
                     <button value="cancel" formmethod="dialog">Cancel</button>
                 </div>
 
